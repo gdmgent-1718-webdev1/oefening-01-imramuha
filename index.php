@@ -6,15 +6,10 @@
 </head>
 <body>
 
-     
+        <?php $naam = "Imran Muhammad"?>
+        <h1><?php echo $naam ?></h1>
 
-        <?php $x = 10?>
-        <?php $y = 7?>
 
-        <h5><?php echo $x + $y?></h5>
-        <h5><?php echo $x - $y?></h5>
-        <h5><?php echo $x * $y?></h5>
-        <h5><?php echo $x % $y?></h5>
     
 </body>
 </html>
