@@ -1,0 +1,22 @@
+API is osmething that helps you populate data from other places
+
+node .\server\api\v1\db\seeder.js mongodb://imosh:123456@ds121889.mlab.com:21889/mobdev2 
+populate our db
+
+npm start -> start the capp
+
+Always host the server first before starting the client!!!! :)
+
+
+localProvider: {password: password} for nested level...
+"5b0621fa6044ae5350afd7fc"
+
+"5b0621fa6044ae5350afd7fb"
+user
+
+git add. 
+git commit -m 1
+git push heroku master
+
+heroku open
+heroku logs --tail
