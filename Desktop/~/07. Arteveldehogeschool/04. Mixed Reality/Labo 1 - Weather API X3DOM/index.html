@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="http://www.x3dom.org/release/x3dom.js"></script>
+    <script src="https://www.x3dom.org/release/x3dom.js"></script>
     <link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <title>Document</title>
+<<<<<<< HEAD
+    <title>Labo 1 - Mixed Reality</title>
 </head>
 <body>
-    <h1>My X3DOM world</h1>
-    <p>
-        This is my first html page with some 3d objects.
-    </p>
+=======
+    <title>Labo 1 - Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
 
+    <div class="container">
+>>>>>>> added some detail to the forecasts
     <x3d width="500px" height="400px">      
       <scene>
+        
           <!-- Weather Conditions -->
           <transform translation='-6 2 0'> 
           <shape> 
               <appearance> 
-              <material diffuseColor='0 0 0'></material> 
+              <material diffuseColor='1 1 1'></material> 
               </appearance> 
-              <text class="weatherCondition" string="weatherTitle" solid="false" ccw="true" usegeocache="true" lit="true"> <fontstyle family="'Times' 'Orbitron'" size="0.4" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle> </text>
+              <text class="weatherCondition" string="weatherTitle" solid="false" ccw="true" usegeocache="true" lit="true"> <fontstyle family="'Times' 'Orbitron'" size="0.5" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle> </text>
           </shape> 
           </transform>
 
@@ -34,25 +39,26 @@
           <transform translation='-6 0 0'> 
           <shape> 
               <appearance> 
-              <material diffuseColor='0 0 0'></material> 
+              <material class="forecastDayOneColour"  diffuseColor='0.75 0.75 0.75'></material> 
               </appearance> 
               <text class="weatherForecastDayOne" string="weatherForecastDayOne" solid="false" ccw="true" usegeocache="true" lit="true"> <fontstyle family="'Times' 'Orbitron'" size="0.4" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle> </text>
           </shape> 
           </transform> 
 
-          <transform translation='-4 -1 -2'> 
+          <transform translation='-5 -1 -2'> 
               <shape> 
                   <appearance> 
-                  <material diffuseColor='0 0 0'></material> 
+                  <material class="forecastDayTwoColour"  diffuseColor='0.60 0.60 0.60'></material> 
                   </appearance> 
+                  <cone></cone>
                   <text class="weatherForecastDayTwo"  string="weatherForecastDayTwo" solid="false" ccw="true" usegeocache="true" lit="true"> <fontstyle family="'Times' 'Orbitron'" size="0.4" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle> </text>
               </shape> 
           </transform>
 
-          <transform translation='-2 -2 -5'> 
+          <transform translation='-4 -2 -5'> 
           <shape> 
               <appearance> 
-              <material diffuseColor='0 0 0'></material> 
+              <material class="forecastDayThreeColour" diffuseColor='0.45 0.45 0.45'></material> 
               </appearance> 
               <text class="weatherForecastDayThree"  string="weatherForecastDayThree" solid="false" ccw="true" usegeocache="true" lit="true"> <fontstyle family="'Times' 'Orbitron'" size="0.4" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle> </text>
           </shape> 
@@ -60,16 +66,18 @@
 
 
           <!--Weather title-->
-          <transform translation='-5 -3 0'> 
+          <transform translation='-4 -3 0'> 
               <shape> 
                   <appearance> 
-                  <material diffuseColor='0 0 0'></material> 
+                  <material diffuseColor='1 1 1'></material> 
                   </appearance> 
                   <text class="weatherTitle" string="weatherTitle" solid="false" ccw="true" usegeocache="true" lit="true"> <fontstyle family="'Times' 'Orbitron'" size="0.4" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle> </text>
               </shape> 
           </transform> 
+          
       </scene>
     </x3d>
+    </div>
 
          <!-- <text class="weatherTitle" string="" solid="false" ccw="true" usegeocache="true" lit="true">
               <fontstyle family="'Times' 'Orbitron'" size="0.8" horizontal="true" justify="BEGIN " lefttoright="true" spacing="1" style="PLAIN" toptobottom="true" quality="2"></fontstyle>

@@ -5,6 +5,7 @@
   let _weatherService,
       _weatherTitleData,
       _weatherConditionData,
+      _weatherForecastData,
       _weatherForecastDayOneData,
       _weatherForecastDayTwoData,
       _weatherForecastDayThreeData;
@@ -20,6 +21,11 @@
     _weatherElementForecastDayOne = document.querySelector(".weatherForecastDayOne");
     _weatherElementForecastDayTwo = document.querySelector(".weatherForecastDayTwo");
     _weatherElementForecastDayThree = document.querySelector(".weatherForecastDayThree");
+
+    // nodes for colour changes
+    _weatherElementColourForecastOne = document.querySelector(".forecastDayOneColour");
+    _weatherElementColourForecastTwo = document.querySelector(".forecastDayTwoColour");
+    _weatherElementColourForecastThree = document.querySelector(".forecastDayThreeColour");
 
     // finally loading the data
     loadWeatherData();
@@ -41,6 +47,8 @@
             _weatherForecastDayTwoData = data.query.results.channel.item.forecast[2];
             _weatherForecastDayThreeData = data.query.results.channel.item.forecast[3];
 
+            _weatherForecastData = data.query.results.channel.item.forecast[0];
+
             // has acces to data
             displayWeather();
             
@@ -59,7 +67,7 @@
             tempForecastDayTwo = '',
             tempForecastDayThree = ''; 
 
-        console.log(_weatherTitleData)
+        console.log(_weatherConditionData)
 
         // templates before setting the string attributes/text elements
         tempTitle += `
@@ -67,8 +75,7 @@
         `;
 
         tempCondition += `
-            Weather on:${_weatherConditionData['date']} in Gent, Oost-vlaanderen, Belgium
-            ${_weatherConditionData['temp']}°C
+            Current weather condition is ${_weatherConditionData['text']} with ${_weatherConditionData['temp']}°C
 
         `;
     
@@ -89,6 +96,38 @@
             High: ${_weatherForecastDayThreeData['high']}°C
             Low: ${_weatherForecastDayThreeData['low']}°C
         `;
+
+
+        // TODO - MESSY CODE FOR NOW - CHANGE COLOR BASED ON HIGH TEMP
+        if(_weatherForecastDayOneData['high'] > 25){   
+            _weatherElementColourForecastOne.setAttribute('diffuseColor', '1 0 0')
+        } else if (_weatherForecastDayOneData['high'] >= 5)  {
+            _weatherElementColourForecastOne.setAttribute('diffuseColor', '1 0.5 0.25')
+        } else if (_weatherForecastDayOneData['high'] >= 15)  {
+            _weatherElementColourForecastOne.setAttribute('diffuseColor', '0 1 0')
+        } else if (_weatherForecastDayOneData['high'] > 25)  {
+            _weatherElementColourForecastOne.setAttribute('diffuseColor', '1 0 0')
+        }
+
+        if(_weatherForecastDayTwoData['high'] > 25){   
+            _weatherElementColourForecastTwo.setAttribute('diffuseColor', '1 0 0')
+        } else if (_weatherForecastDayTwoData['high'] >= 15)  {
+            _weatherElementColourForecastTwo.setAttribute('diffuseColor', '1 0.5 0.25')
+        } else if (_weatherForecastDayTwoData['high'] >= 5)  {
+            _weatherElementColourForecastTwo.setAttribute('diffuseColor', '0 1 0')
+        } else if (_weatherForecastDayTwoData['high'] < 5)  {
+            _weatherElementColourForecastTwo.setAttribute('diffuseColor', '0 0 1')
+        }
+
+        if(_weatherForecastDayThreeData['high'] > 25){   
+            _weatherElementColourForecastThree.setAttribute('diffuseColor', '1 0 0')
+        } else if (_weatherForecastDayThreeData['high'] >= 5)  {
+            _weatherElementColourForecastThree.setAttribute('diffuseColor', '1 0.5 0.25')
+        } else if (_weatherForecastDayThreeData['high'] >= 15)  {
+            _weatherElementColourForecastThree.setAttribute('diffuseColor', '0 1 0')
+        } else if (_weatherForecastDayThreeData['high'] > 25)  {
+            _weatherElementColourForecastThree.setAttribute('diffuseColor', '1 0 0')
+        }
 
 
                    
